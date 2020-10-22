@@ -1,5 +1,3 @@
 FROM cimg/node:lts
-RUN sudo apt-get -y install jq
-RUN sudo curl -s "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN sudo -s unzip awscliv2.zip
-RUN sudo -s ./aws/install
+RUN curl -s "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
+RUN cd /tmp && unzip awscliv2.zip && rm -rf ./aws && rm -f awscliv2.zip
